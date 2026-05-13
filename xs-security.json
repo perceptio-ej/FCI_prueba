@@ -1,6 +1,42 @@
 {
-  "scopes": [],
+  "xsappname": "pagos-service",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.PagosRead",
+      "description": "Lectura de pagos: GET /Pagos, función pagosPorSociedad",
+      "grant-as-authority-to-apps": ["$XSAPPNAME"]
+    },
+    {
+      "name": "$XSAPPNAME.PagosWrite",
+      "description": "Escritura de pagos: acción registrarPago, POST/PATCH/DELETE /Pagos",
+      "grant-as-authority-to-apps": ["$XSAPPNAME"]
+    }
+  ],
   "attributes": [],
-  "role-templates": [],
+  "role-templates": [
+    {
+      "name": "PagosViewer",
+      "description": "Acceso de solo lectura a PagosService — consulta de pagos y pagosPorSociedad",
+      "scope-references": [
+        "$XSAPPNAME.PagosRead"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "PagosWriter",
+      "description": "Acceso de lectura y escritura a PagosService — registrarPago y CRUD completo",
+      "scope-references": [
+        "$XSAPPNAME.PagosRead",
+        "$XSAPPNAME.PagosWrite"
+      ],
+      "attribute-references": []
+    }
+  ],
+  "oauth2-configuration": {
+    "token-validity": 3600,
+    "refresh-token-validity": 604800,
+    "redirect-uris": []
+  },
   "authorities-inheritance": false
 }
