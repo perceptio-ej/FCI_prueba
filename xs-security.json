@@ -4,7 +4,7 @@
   "scopes": [
     {
       "name": "$XSAPPNAME.PagosRead",
-      "description": "Lectura de pagos: GET /Pagos, función pagosPorSociedad",
+      "description": "Lectura de pagos: GET /Pagos, función pagosPorSociedad"
     },
     {
       "name": "$XSAPPNAME.PagosWrite",
