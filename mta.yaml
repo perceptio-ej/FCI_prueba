@@ -83,10 +83,9 @@ resources:
     requires:
       - name: app-api
   - name: cap-pg-service-postgres
-    type: org.cloudfoundry.managed-service
+    type: org.cloudfoundry.existing-service
     parameters:
-      service: postgresql-db
-      service-plan: development
+      service-name: PostgreSQL
   - name: cap-pg-service-destination
     type: org.cloudfoundry.managed-service
     parameters:
