@@ -5,12 +5,10 @@
     {
       "name": "$XSAPPNAME.PagosRead",
       "description": "Lectura de pagos: GET /Pagos, función pagosPorSociedad",
-      "grant-as-authority-to-apps": ["$XSAPPNAME"]
     },
     {
       "name": "$XSAPPNAME.PagosWrite",
-      "description": "Escritura de pagos: acción registrarPago, POST/PATCH/DELETE /Pagos",
-      "grant-as-authority-to-apps": ["$XSAPPNAME"]
+      "description": "Escritura de pagos: acción registrarPago, POST/PATCH/DELETE /Pagos"
     }
   ],
   "attributes": [],
